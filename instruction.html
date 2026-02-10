@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция по подключению - Частный VPN</title>
+    <style>
+        :root {
+            --tg-theme-bg-color: #ffffff;
+            --tg-theme-text-color: #000000;
+            --tg-theme-hint-color: #999999;
+            --tg-theme-link-color: #2481cc;
+            --tg-theme-button-color: #2481cc;
+            --tg-theme-button-text-color: #ffffff;
+            --primary-color: #2481cc;
+            --secondary-color: #6b7c93;
+            --accent-color: #34b7f1;
+            --light-gray: #f8f9fa;
+            --border-color: #e1e5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 100%;
+            padding: 15px;
+        }
+
+        .hero {
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-content {
+            padding: 15px 25px 15px;
+            background: white;
+            max-width: 560px;
+            margin: 0 auto;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .content-section {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+
+        .content-section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .content-section p {
+            font-size: 17px;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        /* Contact buttons */
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            max-width: 560px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            flex-wrap: wrap;
+        }
+
+        .contact-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            max-width: 280px;
+            min-height: 48px;
+            height: 48px;
+            box-sizing: border-box;
+        }
+
+        .contact-button:hover {
+            background: #1a6fb3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-button.telegram {
+            background: #34b7f1;
+        }
+
+        .contact-button.telegram:hover {
+            background: #2aa8e0;
+        }
+
+        /* Адаптивность */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .content-section {
+                max-width: 560px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .contact-buttons {
+                max-width: 560px;
+            }
+            
+            .contact-button {
+                padding: 14px 20px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                padding: 10px;
+            }
+            
+        .hero {
+            margin-bottom: 15px;
+            position: relative;
+                overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+        }
+            
+            .hero-image {
+                height: 260px;
+            }
+            
+            .hero-content {
+                padding: 15px 15px 15px;
+                height: 160px;
+            }
+            
+            .hero h1 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+            
+            .hero p {
+                font-size: 17px;
+                margin-bottom: 10px;
+            }
+            
+            .content-section {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .content-section h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .content-section p {
+                font-size: 17px;
+                margin-bottom: 12px;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+                margin: 15px 0;
+                gap: 10px;
+                width: 100%;
+            }
+            
+            .contact-button {
+                padding: 12px 20px;
+                font-size: 14px;
+                min-width: 0;
+                width: 100%;
+                max-width: 280px;
+                height: 48px;
+                box-sizing: border-box;
+            }
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .nav-button:hover {
+            background: #1a6fb3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-button.active {
+            background: var(--accent-color);
+        }
+
+        /* Mobile navigation - always horizontal row */
+        @media (max-width: 767px) {
+            .navigation {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: stretch;
+                gap: 8px;
+                margin: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-button {
+                flex: 1;
+                min-width: 0;
+                font-size: 14px;
+                padding: 12px 8px;
+                white-space: nowrap;
+                text-align: center;
+                width: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        /* Subheadings */
+        .content-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 20px 0 15px;
+            color: var(--primary-color);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <img src="img/1762350480850.jpg" alt="Инструкция по подключению" class="hero-image">
+            <div class="hero-content">
+                <h1>Инструкция по подключению</h1>
+                <p>Подключите VPN с помощью нашего Telegram бота</p>
+            </div>
+        </section>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-button">Доступ</a>
+            <a href="instruction.html" class="nav-button active">Инструкция</a>
+            <a href="download.html" class="nav-button">Скачать</a>
+        </nav>
+
+        <section class="content-section">
+            <h2>📲 Как подключить VPN</h2>
+            
+<h3>Шаг 1. Получите ключ в Telegram</h3>
+<p>1. Нажмите кнопку «Мой бот» ниже.</p>
+<p>2. В чате нажмите START (или «Начать»).</p>
+<p>3. Выберите в меню: ➕ WireGuard → Тип вашего устройства.</p>
+<p>4. Введите любое название для ключа (например, MyDevice).</p>
+<p>5. Перейдите в раздел «Мои конфиги» и скачайте файл настроек (или используйте QR-код для телефона).</p>
+            
+            <div class="contact-buttons">
+                <a href="https://t.me/MyWGuardBot" class="contact-button telegram" target="_blank">
+                    🤖 Мой бот
+                </a>
+            </div>
+
+<h3>Шаг 2. Настройте приложение WireGuard</h3>
+<p>1. Установите приложение: Скачайте WireGuard для вашего устройства (доступно в любом магазине приложений).</p>
+<p>2. Добавьте ключ:</p>
+<p>  • Откройте WireGuard и нажмите кнопку «Добавить туннель» (или иконку +).</p>
+<p>  • Выберите «Импорт из файла» и укажите скачанный в боте файл.</p>
+<p>  • Для смартфонов: можно выбрать «Сканировать QR-код».</p>
+<p>3. Включите: Нажмите кнопку «Активировать» или переведите ползунок в рабочее состояние.</p>
+
+            <div class="contact-buttons">
+                <a href="download.html" class="contact-button">
+                    📥 Скачать WireGuard
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Highlight active navigation button
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            const currentHash = window.location.hash;
+            const currentPage = currentPath.split('/').pop() || 'index.html';
+            const navButtons = document.querySelectorAll('.nav-button');
+            
+            navButtons.forEach(button => {
+                const buttonHref = button.getAttribute('href');
+                
+                // Проверяем, совпадает ли путь
+                if (buttonHref === currentPage) {
+                    button.classList.add('active');
+                }
+                // Проверяем, если это ссылка на главную с якорем
+                else if (buttonHref === 'index.html' && currentPage === 'index.html') {
+                    button.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
